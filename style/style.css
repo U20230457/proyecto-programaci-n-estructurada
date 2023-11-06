@@ -1,35 +1,57 @@
+body{
+    background-image: url("https://c4.wallpaperflare.com/wallpaper/351/435/677/adventure-time-landscape-wallpaper-preview.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .intro{
     display:grid;
     text-align: center;
 }
-.main-container{
-    background-color: aqua;
+.maincontainer{
     display:flex;
     justify-content: space-between;
 }
-.toolsbar{
-    background-color: brown;
+.history{
+    background-color: rgb(214, 154, 154);
     width: 300px;
     height: auto;
-    font-size: 30px;
+    font-size: 20px;
     text-align: center;
     padding-bottom: 10px;
     
 }
 .game{
-    background-color: rgb(149, 165, 42);
+    background-color: rgb(76, 161, 157);
     width: 1000px;
     margin-left: 10px;
     margin-right: 10px;
-    display: flex;
-    justify-content: center;
+    display: block;
 }
-.bmo{
-    width: 800px;
-    background-color: blue;
 
-}
 .screen{
-    width: 400px;
-    background-color: bisque;
+    width: 700px;
+    height: 400px;
+    background-color: rgb(56, 128, 73);
+    margin-left: 15%;
+    margin-right: 20px;
+    margin-top: 5px;
+    border: black solid;
+    display: grid;
+    grid-template-rows: repeat(30,2fr);
+    grid-template-columns: repeat(30,1fr);
+}
+.spacebtn{
+    
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+.btn{
+    background-color: rgb(254, 71, 71);
+    width: 100px;
+    height: 90px;
+    margin: 5px 5px 5px 20px;
+    display:grid;
+    align-items: center;
+    text-align: center;
 }
