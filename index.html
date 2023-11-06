@@ -8,44 +8,68 @@
 </head>
 <body>
     <!-- introduccion al juego incluye titulo y descripcion -->
-    <div class="introduction">
+    <div class="intro">
         <h1 >
             the jake's adventure
         </h1>
-        <p>en este juego tedras que ayudar a jake a comer muchas manzanas que esta esparcidas alrededor del tablero, ten en cuenta que el poder de jake es estirarse por lo tanto el crecera a medida se vaya comiendo las manzanas.....demuestra que eres el mas pro y obten el puntaje mas alto, buena suerte</p>
+        
     </div>
     <!-- fin de introduccion -->
 
-    <!-- div principal de toda la pantalla -->
-    <div class="main-container"> 
+    <div class="maincontainer"> <!-- div principal de toda la pantalla -->
 
-        <!-- seccion  que contiene herramientas -->
-        <aside class="toolsbar">
+        <!-- seccion  que contiene historia -->
+        <aside class="history">
             <div>
-                <h4>menu</h4>
+                <h4>history</h4>
+            <p>
+                en este juego tedras que ayudar a jake a comer muchas manzanas que esta esparcidas alrededor del tablero, ten en cuenta que el poder de jake es estirarse por lo tanto el crecera a medida se vaya comiendo las manzanas.....demuestra que eres el mas pro y obten el puntaje mas alto, buena suerte
+            </p>
             </div>
-           <div class="player">
-            <h4>player:</h4>
-            <p></p>
-           </div>
-           <div class="score">
-            <h4>score:</h4>
-            <p></p>
-           </div>
-           <div class="help">
-            <h4>help:</h4>
-            <p></p>
-           </div>
-           <div class="music">
-            <h3>music</h3>
-            <button class="mucis control" id="vol+">vol +</button>
-            <button class="mucis control" id="vol-">vol -</button>
-            <button class="mucis control" id="mute">mute</button>
-           </div>
+            <div class="controls">
+                <h4>controles</h4>
+                <p>puedes usar las flechas de movimiento de tu teclado para mover al personaje en la direccion que tu quieras <button>←</button><button>↑</button><button>→</button><button>↓</button>
+
+                </p>
+            </div>
 
         </aside>
-        <!-- fin de seccion de herramientas -->
-        <section class="game">
+        <!-- fin de seccion de histoira -->
+       
+         <section class="game">   <!-- contiene todo el espacio de juego y botones -->
+            <div class="screen"><!-- espacio de pantalla -->
+                
+            </div>
+
+            <div class="spacebtn">
+                <div class="btn">
+                    <button>start</button>
+                </div>
+                <div class="btn">
+                    <button>try again</button>
+                </div>
+                <div class="btn">
+                    <h4>your score</h4>
+                    <p>15pts</p>
+                    
+                </div>
+                <div class="btn">
+                    <h4>music</h4>  
+                    <div class="btnmusic">
+                     <button class="music boton">+</button>
+                     <button class="music boton">-</button>
+                     <button class="music boton">mute</button>
+                     </div>
+                </div>
+                <div class="btn">
+                    <h4>player</h4>
+                    <p>ivan</p>
+                </div>
+                <div class="btn">
+                    <h4>help</h4>
+                </div>
+                
+
             
         </section>
     </div>
