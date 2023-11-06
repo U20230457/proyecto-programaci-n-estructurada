@@ -48,10 +48,14 @@ body{
     margin-left: 15%;
     margin-right: 20px;
     margin-top: 5px;
-    border: black solid;
-    display: grid;
-    grid-template-rows: repeat(30,2fr);
-    grid-template-columns: repeat(30,1fr);
+    border: 1px black solid;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.screen div{
+    width: 20px;
+    height: 20px;
 }
 
 .spacebtn{
