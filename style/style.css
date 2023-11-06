@@ -2,7 +2,7 @@
     display:grid;
     text-align: center;
 }
-.maincontainer{
+.main-container{
     background-color: aqua;
     display:flex;
     justify-content: space-between;
