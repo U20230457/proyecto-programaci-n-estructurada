@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>the jake's adventure game</title>
+    <link rel="shortcut icon" href="img/images.jpeg">
     <link rel="stylesheet" href="./style/style.css">
 </head>
 <body>
@@ -30,43 +31,46 @@
                 <p>
                     puedes usar las flechas de movimiento de tu teclado para mover al personaje en la direccion que tu quieras
                 </p>
-                <button>←</button><button>↑</button><button>→</button><button>↓</button>
+                <button>↞</button><button>↟</button><button>↠</button><button>↡</button>
             </div>
         </aside>
         <!-- contiene todo el espacio de juego y botones -->
         <section class="game">
-            <!-- espacio de pantalla -->
-            <div class="screen">
-                
-            </div>
 
-            <div class="spacebtn">
-                <div class="btn">
-                    <button>start</button>
+            <aside class="marcadores">
+                <div class="cuadro_btn slide_right">
+                    <button class="button" id="start_button">Start</button>
                 </div>
-                <div class="btn" id="try-again">
+                <div class="cuadro_btn slide_right">
+                    <button class="button" id="tryagain_button">try again</button>
+                </div>
+                <div class="btn">
                     <button>try again</button>
                 </div>
-                <div class="btn" id="score">
-                    <h4>your score</h4>
-                    <p id="po"></p>
-                </div>
                 <div class="btn">
-                    <h4>music</h4>  
-                    <div class="btnmusic">
-                        <button class="music boton">mute</button>
+                    <h4>your score</h4>
+                    <p>0 pts</p>
+                </div>
+                <div class="cuadro_btn slide_right">
+                    <div class="music_control">
+                        <h4>music</h4>
+                        <div class="music_icons">
+                            <button class="music_buttons" id="vol_mas">vol+</button>
+                            <button class="music_buttons" id="vol_menos">vol-</button>
+                            <button class="music_buttons" id="mute">mute</button>
+                        </div>
+                        
                     </div>
                 </div>
-                <div class="btn">
-                    <h4>player</h4>
-                    <p>ivan</p>
-                </div>
-                <div class="btn">
-                    <h4>help</h4>
-                </div>
-            </div>    
+            </aside>
+            <!-- espacio de pantalla -->
+        <div class="screen">
+                
+        </div>
         </section>
     </div>
+    
+    
 </body>
-<script src="./js/index.js"></script>
+
 </html>
