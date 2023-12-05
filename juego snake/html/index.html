@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Jake's adventure</title>
+    <link rel="shortcut icon" href="../images/jake-icon.jpg">
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Pixelify+Sans:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.cdnfonts.com/css/arcade-classic" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="container-botton">
+            <button class="interactieboton" id="homeBTN">home</button>  
+            <button class="interactieboton" id="scoreBTN">High scores</a></button>
+            <div class="divBtnSound">
+                <button class="btnSound" id="mute"><i class="fa-solid fa-volume-xmark"></i></button>
+                <button class="btnSound-2" id="vol-"><i class="fa-solid fa-volume-low"></i></button>
+                <button class="btnSound-3" id="vol+"><i class="fa-solid fa-volume-high"></i></button>
+            </div>
+        </div>
+    
+        <div class="container-board">
+            <div class="start-botton">
+                <button id="start" ><img src="../images/play.png" alt="" srcset=""></button>
+            </div>
+
+            <div class="tablero" id="tablero">
+            </div>
+
+            <div class="add-user" id="name-user">
+                <h3>Game over</h3>
+                <p>Please, enter your name</p>
+                <label for="" id="add-user-label">
+                    <input type="text" name="" id="input-user">
+                </label>
+                <button id="add-botton" type="button">add</button>
+            </div>
+            <div class="restart-game" id="restart-game">
+                <h3>Do you want to try it again?</h3>
+                <button class="try-again"  id="try-again">try again</button>
+            </div>
+        </div>
+        <div class="container-score">
+            <div class="textpoint">
+                <h3 >points:</h3>
+                <p  id="points">0</p>
+            </div>
+            <section class="gift"></section>
+        </div>
+    </div>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js"></script>
+    <script src="../js/sounds.js"></script>
+    <script src="../js/gamemusic.js"></script>
+
+
+
+</body>
+<script src="../js/game.js"></script>
+<script src="../js/score.js"></script>
+</html>

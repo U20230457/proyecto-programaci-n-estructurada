@@ -1,0 +1,270 @@
+body {
+    background-image: url(../images/imgFondov3.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment:fixed;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+.contenedor {
+    background-attachment:fixed;
+    width: 100%;
+    height: 100vh;
+    display:flex;
+}
+.titulojuego{
+    top: 1%;
+    margin: 3px;
+    font-family: 'ArcadeClassic', sans-serif; 
+    font-size: 7.5em;
+    text-align: center;
+    text-align: center;
+    font-weight: bold;
+    text-align: center;
+    position: absolute;
+    color: rgb(255, 153, 0);
+    text-shadow: 5px 8px 2px rgb(0, 0, 0);
+}
+
+.historyConten,
+.helpContent {
+    display: none;
+}
+
+.lateral1{
+
+    height: auto;
+    width: 30%;
+    margin: 1% 1% 1% 1%;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 1%;
+}
+.lateral{
+
+    height: auto;
+    width: 30%;
+    margin: 1% 1% 1% 1%;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 1%;
+}
+
+
+.helpmostrar {
+    background-image: url(../images/fondoAyuda.jpg);
+    background-size: cover;
+    top: 10%;
+    left: 3%;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(192, 251, 255, 0.684);
+    border: 5px solid rgb(255, 255, 255);
+    width: 90%;
+    height: 60%;
+    margin: 1% 1% 1% 1%;
+    border-radius: 15px;
+}
+
+.bmoHelp{
+    position: absolute;
+    height: 50%;
+    right: 0%;
+    width: 60%;
+    top: 50%;
+}
+.globoTxtHelp{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    height: 40%;
+    width: 80%;
+}
+
+
+.historymostrar{
+    background-image: url(../images/fondoHistoria.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    top: 10%;
+    left: 3%;
+    position: relative;
+    justify-content: center;
+    border: 5px solid rgb(255, 255, 255);
+    width: 90%;
+    height: 60%;
+    margin: 1% 1% 1% 1%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2%;
+}
+.textoHistory{
+    color: rgb(0, 0, 0);
+    font-family: 'ArcadeClassic', sans-serif; 
+    font-size: 1.2em;
+    text-align: justify;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(240, 248, 255, 0.714);
+    border-radius: 10px;
+    width: 80%;
+    margin: 3% 0;
+    background-attachment:fixed;
+}
+.elementConten {
+    background-attachment:fixed;
+    display: flex;
+    width: 38%; 
+    height: auto;
+    flex-direction: column;
+    margin: 1% 1% 1% 1%;
+    justify-content: center;
+    align-items: center;
+}
+.divBTN {
+
+    width: 39.5%;
+    height: 50%;
+    top: 14%;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes jump {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40%, 60% {
+        transform: translateY(-10px);
+    }
+}
+
+.BTN,.BTN-2,.BTN-3 {
+    background-image: url(../images/fondoBtnPlay.webp);
+    background-size: 100%;
+    margin: 5%;
+    padding: 20px;
+    width: 100%;
+    max-width: 200px;
+    height: 20%;
+    font-family: 'ArcadeClassic', sans-serif;
+    font-weight: bold;
+    font-size: 2.2em;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    color: rgb(255, 255, 255);
+    text-shadow: 3px 3px 6px #000000;
+    box-shadow: inset 5px 5px 9px rgb(255, 255, 255);
+    cursor: pointer;
+    transition: 0.1s;
+    animation: jump 1s infinite;
+}
+
+
+.BTN:active, .BTN-3:active {
+    background-color: rgb(0, 0, 0);
+    transform: translateY(2px);
+}
+
+.BTN:hover {
+    color: #7fbcc5;
+    transform: translateY(-2px); 
+}
+
+.BTN-2:hover {
+    color: #7fbcc5;
+    transform: translateY(-2px);
+}
+
+.BTN-3:hover {
+    color: #7fbcc5;
+    transform: translateY(-2px);
+}
+
+
+.divBtnSound {
+    height: 10%;
+    width: 40%;
+    top: 15%;
+    display: flex;
+    position: relative;
+    justify-content: space-evenly; 
+    align-items: center;
+    
+}
+
+.btnSound, .btnSound-2, .btnSound-3 {
+    background-color: #e0f6ff;
+    color: #000000;
+    height: 45%;
+    width: 25%;
+    border: 2%;
+    border-color: #ffffff;;
+    border-radius: 10%; 
+    cursor: pointer;
+}
+
+.btnSound:hover{
+    background-color: rgb(255, 23, 23);
+    color: #ffffff;
+}
+
+.btnSound-2 {
+    left: 30%;
+}
+
+.btnSound-2:hover{
+    background-color: #7fbcc5;
+    color: #ffffff;
+}
+
+.btnSound-3 {
+    left: 60%;
+}
+
+.btnSound-3:hover{
+    background-color: #7fbcc5;
+    color: #ffffff;
+}
+
+
+.salir1{
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-radius: 5px 0px 0px 0px;
+    border: none;
+}
+.salir1:hover{
+    background-color: rgb(255, 147, 226);
+}
+
+.salir{
+    background-color: rgb(255, 255, 255);
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border: none;
+    border-radius: 5px 0px 0px 0px;
+}
+.salir:hover{
+    background-color: rgba(241, 49, 91, 0.873);
+}
