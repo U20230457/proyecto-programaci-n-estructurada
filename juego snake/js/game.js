@@ -1,17 +1,17 @@
-const tablero = document.getElementById("tablero");
+const board = document.getElementById("board");
 const points = document.getElementById("points");
 const start=document.getElementById("start")
-let comidaX=4;
-let comidaY=18;
+let eatX=4;
+let eatY=18;
 let snakeX = 10;
 let snakeY = 10;
 let velocityX = 0;
 let velocityY = 0;
-let snakeCuerpo=[]
-let puntos = 0;
-let perder=false
+let snakeBody=[]
+let score = 0;
+let gameOver=false
 let setIntervalId
-let movimientoEnProceso=false
+let move=false
 
 start.addEventListener('click', () =>{
   start.classList.add("disguise")
@@ -20,79 +20,79 @@ start.addEventListener('click', () =>{
   document.addEventListener("keydown", controlSnake);
 })
 
-function crearTablero() {    
+function createBoard() {
   for (let X = 0; X <= 19; X++) {
     for (let Y = 0; Y <= 19; Y++) {
       let casilla = document.createElement("div");
-      casilla.className = "casilla";
+      casilla.className = "box";
       casilla.style.gridArea = `${X + 1} / ${Y + 1}`;
-      tablero.appendChild(casilla);
+      board.appendChild(casilla);
     }
   }
 }
 
-function cambiarPosicion() {
+function changePosition() {
   do {
-    comidaX = Math.floor(Math.random() * 20) + 1;
-    comidaY = Math.floor(Math.random() * 20) + 1;
-  } while (snakeCuerpo.some(segment => segment[0] === comidaX && segment[1] === comidaY) || (snakeX === comidaX && snakeY === comidaY));
+    eatX = Math.floor(Math.random() * 20) + 1;
+    eatY = Math.floor(Math.random() * 20) + 1;
+  } while (snakeBody.some(segment => segment[0] === eatX && segment[1] === eatY) || (snakeX === eatX && snakeY === eatY));
 }
 
 
 function initgame() {
-  if(perder)return findejuego()
+  if(gameOver)return findejuego()
   
-  let casilla = document.querySelector(`[style="grid-area: ${comidaY} / ${comidaX};"]`);
-  casilla.className = "comida";
+  let casilla = document.querySelector(`[style="grid-area: ${eatY} / ${eatX};"]`);
+  casilla.className = "eat";
 
-  if(snakeX==comidaX && snakeY==comidaY){
+  if(snakeX==eatX && snakeY==eatY){
     soundeat()
-    puntos++
+    score++
     puntaje()
-    cambiarPosicion()
-    snakeCuerpo.push([comidaY,comidaX])
-    casilla.classList.remove("comida")
+    changePosition()
+    snakeBody.push([eatY,eatX])
+    casilla.classList.remove("eat")
   }
 
-  for(let i=snakeCuerpo.length-1;i>0;i--){
-    snakeCuerpo[i]=[...snakeCuerpo[i-1]]
+  for(let i=snakeBody.length-1;i>0;i--){
+    snakeBody[i]=[...snakeBody[i-1]]
   }
 
-  snakeCuerpo[0]=[snakeX,snakeY]
+  snakeBody[0]=[snakeX,snakeY]
   snakeX += velocityX;
   snakeY += velocityY;
 
   //detecta si la serpiente coliciona con los bordes del tablero
   if(snakeX<=0|| snakeX>20 || snakeY<=0 || snakeY>20){
-    perder=true
+    gameOver=true
     findejuego()
     return
   }
 
   //detecta si la srpiente ha chocado con su propio cuerpo
-  for(let i=1; i<snakeCuerpo.length;i++){
-    if(snakeX===snakeCuerpo[i][0] && snakeY===snakeCuerpo[i][1]){
-      perder=true
+  for(let i=1; i<snakeBody.length;i++){
+    if(snakeX===snakeBody[i][0] && snakeY===snakeBody[i][1]){
+      gameOver=true
     }
   }
 
-  for(let i=0;i<snakeCuerpo.length;i++){
-    let cuerpoSnake = document.querySelector(`[style="grid-area: ${snakeCuerpo[i][1]} / ${snakeCuerpo[i][0]};"]`);
+  for(let i=0;i<snakeBody.length;i++){
+    let cuerpoSnake = document.querySelector(`[style="grid-area: ${snakeBody[i][1]} / ${snakeBody[i][0]};"]`);
     cuerpoSnake.classList.add("snake");
   }
 
-  tablero.querySelectorAll('.snake').forEach((segment) => {
+  board.querySelectorAll('.snake').forEach((segment) => {
     segment.classList.remove('snake');
   });
 
   // Agregar la clase "snake" a la cabeza de la serpiente
   let cabezaSnake = document.querySelector(`[style="grid-area: ${snakeY} / ${snakeX};"]`);
   cabezaSnake.classList.add("snake");
-  for(let i=0;i<snakeCuerpo.length;i++){
-    let cuerpoSnake = document.querySelector(`[style="grid-area: ${snakeCuerpo[i][1]} / ${snakeCuerpo[i][0]};"]`);
+  for(let i=0;i<snakeBody.length;i++){
+    let cuerpoSnake = document.querySelector(`[style="grid-area: ${snakeBody[i][1]} / ${snakeBody[i][0]};"]`);
     cuerpoSnake.classList.add("snake");
   }
-  movimientoEnProceso=false
+  move=false
 
 }
 
@@ -103,19 +103,28 @@ function  findejuego(){
 }
 
 function getName(){
-  const btn = document.getElementById('add-botton')
-  const userInput = document.getElementById('input-user')
-  document.getElementById('name-user').style.display = 'flex'
+  const btn = document.getElementById('add-botton');
+  const userInput = document.getElementById('input-user');
+  const label = document.getElementById('add-user-label');
+  const nameUser = document.getElementById('name-user');
+
+  document.getElementById('name-user').style.display = 'flex';
+
   btn.addEventListener('click', () => {
-    document.getElementById('name-user').style.display = 'none'
-    tryAgainGame()
-  })
+    if (label.innerText.trim() !== '') {
+      alert('Please enter a name before proceeding.');
+    } else {
+      nameUser.style.display = 'none';
+      tryAgainGame();
+
+    }
+  });
 
 
   btn.addEventListener('click', () =>{
     const newPlayer = {
       name: userInput.value,
-      score: puntos
+      score: score
     }
 
     players.push(newPlayer)
@@ -137,12 +146,12 @@ function savePlayersToLocalStorage(){
 }
 
 function puntaje() {
-  points.innerText = puntos.toString();
+  points.innerText = score.toString();
 }
 
 const controlSnake = (e) => {
- if(movimientoEnProceso) return;
-  movimientoEnProceso=true
+ if(move) return;
+  move=true
   if (e.key === "ArrowRight" && velocityX !== -1) {
     velocityX = 1;
     velocityY = 0;
@@ -158,8 +167,8 @@ const controlSnake = (e) => {
   }
 }
 
-crearTablero();
-cambiarPosicion()
+createBoard();
+changePosition()
 //initgame();
 //document.addEventListener("keydown", controlSnake);
 setIntervalId=setInterval(initgame,120 );

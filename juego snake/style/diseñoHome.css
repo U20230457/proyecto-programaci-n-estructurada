@@ -7,14 +7,13 @@ body {
     height: 100%;
     margin: 0;
 }
-
-.contenedor {
+.conteiner {
     background-attachment:fixed;
     width: 100%;
     height: 100vh;
     display:flex;
 }
-.titulojuego{
+.title-game{
     top: 1%;
     margin: 3px;
     font-family: 'ArcadeClassic', sans-serif; 
@@ -108,7 +107,7 @@ body {
     text-align: center;
     padding: 2%;
 }
-.textoHistory{
+.textHistory{
     color: rgb(0, 0, 0);
     font-family: 'ArcadeClassic', sans-serif; 
     font-size: 1.2em;
@@ -243,7 +242,7 @@ body {
 }
 
 
-.salir1{
+.exit1{
     background-color: rgb(255, 255, 255);
     position: absolute;
     top: 0px;
@@ -251,11 +250,11 @@ body {
     border-radius: 5px 0px 0px 0px;
     border: none;
 }
-.salir1:hover{
+.exit1:hover{
     background-color: rgb(255, 147, 226);
 }
 
-.salir{
+.exit{
     background-color: rgb(255, 255, 255);
     height: 30px;
     width: 30px;
@@ -265,6 +264,6 @@ body {
     border: none;
     border-radius: 5px 0px 0px 0px;
 }
-.salir:hover{
+.exit:hover{
     background-color: rgba(241, 49, 91, 0.873);
 }

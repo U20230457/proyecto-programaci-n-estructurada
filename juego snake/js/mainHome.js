@@ -1,10 +1,10 @@
 let ayuda = document.getElementById("ayuda");
 let history = document.getElementById("history");
 let historyConten=document.getElementById("historyConten")
-let helpcontent = document.getElementById("helpcontent");
+let helpcontent = document.getElementById("helpcontent"); 
 
-let salirhelp=document.getElementById("salirHelp")
-let salirhistory=document.getElementById("salirHistory")
+let exitHelp=document.getElementById("exit-Help")
+let exitHistory=document.getElementById("exit-History")
 
 function mostrar(etiqueta, clase) {
   etiqueta.classList.add(clase);
@@ -25,16 +25,15 @@ history.addEventListener("click",function(){
     remover(helpcontent,"helpmostrar")
 })
 
-salirhelp.addEventListener("click",function(){
+exitHelp.addEventListener("click",function(){
     remover(helpcontent,"helpmostrar")
 })
-salirhistory.addEventListener("click",function(){
+exitHistory.addEventListener("click",function(){
     remover(historyConten,"historymostrar")
 })
 
 let playRedirigir = document.getElementById("play");
 
 playRedirigir.addEventListener("click", function () {
-    
-        window.location.href = "../html/index.html";
-    });
+  window.location.href = "../html/index.html";
+});
