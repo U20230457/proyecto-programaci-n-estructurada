@@ -110,7 +110,7 @@ function getName(){
   document.getElementById('name-user').style.display = 'flex';
 
   btn.addEventListener('click', () => {
-    if (userInput.innerText.trim() === '') {
+    if (userInput.value.trim() === '') {
       alert('Please enter a name before proceeding.');
     } else {
       nameUser.style.display = 'none';
