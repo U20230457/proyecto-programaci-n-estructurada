@@ -105,13 +105,12 @@ function  findejuego(){
 function getName(){
   const btn = document.getElementById('add-botton');
   const userInput = document.getElementById('input-user');
-  const label = document.getElementById('add-user-label');
   const nameUser = document.getElementById('name-user');
 
   document.getElementById('name-user').style.display = 'flex';
 
   btn.addEventListener('click', () => {
-    if (label.innerText.trim() !== '') {
+    if (userInput.innerText.trim() === '') {
       alert('Please enter a name before proceeding.');
     } else {
       nameUser.style.display = 'none';
