@@ -15,7 +15,6 @@ let move=false
 
 start.addEventListener('click', () =>{
   start.classList.add("disguise")
-  velocityX+=1
   initgame()
   document.addEventListener("keydown", controlSnake);
 })
